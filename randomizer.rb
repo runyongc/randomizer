@@ -17,10 +17,18 @@ def Name_input(number_names)
 		puts "Please enter name number #{(i + 1)}."
 		a.push(gets.chomp)
 		end
-	Assign_pairs(a)
+		Assign_pairs(a)
 	end
 
-puts "How many names would you like to enter?"
-names = gets.chomp.to_i
-Name_input(names)
+def Main()
+	begin
+		puts "How many names would you like to enter?"
+		names = Integer(gets.chomp)
+		rescue
+			puts "That's not an integer."
+			retry
+	end
+	Name_input(names)
+end
 
+Main()
